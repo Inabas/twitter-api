@@ -1,5 +1,5 @@
 # ワークフロー名
-name: housework_bot
+name: test1
 on:
   schedule:
     # 定期実行する時間（グリニッジ標準時）
@@ -25,6 +25,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo 'API_KEY = ${secrets.API_KEY}'
     # 実行する処理＆コマンド指定
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
