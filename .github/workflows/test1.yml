@@ -25,7 +25,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo "API_KEY = ${secrets.API_KEY}"
+          echo "API_KEY = ${{ secrets.API_KEY }}"
     # 実行する処理＆コマンド指定
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
