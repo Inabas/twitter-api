@@ -43,4 +43,6 @@ jobs:
           # 定期実行するファイルを指定
           pwd
           echo $GITHUB_WORKSPACE
+          ls -la
           python $GITHUB_WORKSPACE/lambda_function.py
+          echo $?
