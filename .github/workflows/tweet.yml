@@ -8,7 +8,7 @@ on:
 # ワークフローの実行は、順次または並行して実行される1つまたは複数のジョブで構成されます。
 jobs:
   # このワークフローには、"build "という1つのジョブが含まれています。
-  build:
+  tweet:
     # Ubuntuの最新版環境内で処理を実行することを指定
     runs-on: ubuntu-latest
     # このジョブのGitHub環境を指定
@@ -41,4 +41,6 @@ jobs:
       - name: Run script
         run: |
           # 定期実行するファイルを指定
+          pwd
+          echo $GITHUB_WORKSPACE
           python $GITHUB_WORKSPACE/lambda_function.py

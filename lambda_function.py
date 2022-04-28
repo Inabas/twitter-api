@@ -22,6 +22,7 @@ def lambda_handler(event, context):
 
   # tweet実行
   result = api.update_status(message)
+  print(result)
 
   return {
     'statusCode': 200,
@@ -39,8 +40,6 @@ def key_tweepy_proc():
   access_token = os.environ.get("ACCESS_TOKEN")
   access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
-  print(api_key)
-  print(access_token)
   auth = tweepy.OAuthHandler(api_key, api_secret)
   auth.set_access_token(access_token, access_token_secret)
 
