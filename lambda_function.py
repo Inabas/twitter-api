@@ -34,12 +34,14 @@ def lambda_handler(event, context):
 # .envよりアクセスキーなど読み込み、tweepyの認証を設定する
 def key_tweepy_proc():
 
-  consumer_key = os.environ.get("CONSUMER_KEY")
-  consumer_secret = os.environ.get("CONSUMER_SECRET")
+  api_key = os.environ.get("API_KEY")
+  api_secret = os.environ.get("API_SECRET")
   access_token = os.environ.get("ACCESS_TOKEN")
   access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
-  auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+  print(api_key)
+  print(access_token)
+  auth = tweepy.OAuthHandler(api_key, api_secret)
   auth.set_access_token(access_token, access_token_secret)
 
   api = tweepy.API(auth)
