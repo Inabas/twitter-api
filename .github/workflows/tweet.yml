@@ -44,5 +44,5 @@ jobs:
           pwd
           echo $GITHUB_WORKSPACE
           ls -la
-          python $GITHUB_WORKSPACE/lambda_function.py
+          python $GITHUB_WORKSPACE/main.py
           echo $?
