@@ -40,6 +40,11 @@ def key_tweepy_proc():
   access_token = os.environ.get("ACCESS_TOKEN")
   access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
+  print(api_key)
+  print(api_secret)
+  print(access_token)
+  print(access_token_secret)
+
   auth = tweepy.OAuthHandler(api_key, api_secret)
   auth.set_access_token(access_token, access_token_secret)
 

@@ -45,9 +45,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: |
-          # 定期実行するファイルを指定
-          pwd
-          echo $GITHUB_WORKSPACE
           ls -la
+          # 定期実行するファイルを指定
           python $GITHUB_WORKSPACE/main.py
           echo $?
