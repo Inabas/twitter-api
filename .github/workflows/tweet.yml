@@ -1,0 +1,44 @@
+# ワークフロー名
+name: tweet_current_time
+on:
+  # schedule:
+    # 定期実行する時間（グリニッジ標準時）
+    # - cron: '0 22 * * *'
+  workflow_dispatch:
+# ワークフローの実行は、順次または並行して実行される1つまたは複数のジョブで構成されます。
+jobs:
+  # このワークフローには、"build "という1つのジョブが含まれています。
+  build:
+    # Ubuntuの最新版環境内で処理を実行することを指定
+    runs-on: ubuntu-latest
+    # このジョブのGitHub環境を指定
+    environment: twitter
+    # ステップは、ジョブの一部として実行されるタスクのシーケンスを表す
+    steps:
+      # GITHUB_WORKSPACE以下にリポジトリをチェックアウトし、ジョブがアクセスできるようにします
+      - name: checkout repository
+        uses: actions/checkout@v3
+      # ランナーシェルを使って一つのコマンドを実行する
+      - name: Run a one-line script
+        run: echo Hello, world!
+      # ランナーズシェルを使って一連のコマンドを実行する
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+      # 実行する処理＆コマンド指定
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          # pip更新
+          python -m pip install --upgrade pip
+          # 必要なパッケージインストール
+          # tweepy
+          pip install tweepy
+      - name: Run script
+        run: |
+          # 定期実行するファイルを指定
+          python $GITHUB_WORKSPACE/lambda_function.py
