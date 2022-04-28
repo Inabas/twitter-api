@@ -43,6 +43,9 @@ def key_tweepy_proc():
   if api_key == '***' :
     print('api_key is wrong!!')
 
+  if api_key == '5rPB45HvzDyPLEQEz1eBhQ2QX' :
+    print('api_key is correct!!')
+
   print(api_key)
   print(api_secret)
   print(access_token)
