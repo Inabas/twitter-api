@@ -5,7 +5,7 @@ import os
 import date_util as dt
 # ------------------------------------------------------------------
 
-def lambda_handler(event, context):
+def lambda_handler():
 
   # # 環境変数を初期化
   # env.init()

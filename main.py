@@ -1,3 +1,3 @@
 import lambda_function
 
-lambda_handler()
+lambda_function.lambda_handler()
