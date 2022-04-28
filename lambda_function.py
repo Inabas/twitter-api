@@ -14,7 +14,7 @@ def lambda_handler():
 
   # メッセージ作成
   message = ""
-  message += "AWS Lambda 投稿テスト\n"
+  message += "GitHub Actions 投稿テスト\n"
 
   # メッセージに現在時刻を追加
   now = dt.getJstNow()
@@ -39,17 +39,6 @@ def key_tweepy_proc():
   api_secret = os.environ.get("API_SECRET")
   access_token = os.environ.get("ACCESS_TOKEN")
   access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
-
-  if api_key == '***' :
-    print('api_key is wrong!!')
-
-  if api_key == '5rPB45HvzDyPLEQEz1eBhQ2QX' :
-    print('api_key is correct!!')
-
-  print(api_key)
-  print(api_secret)
-  print(access_token)
-  print(access_token_secret)
 
   auth = tweepy.OAuthHandler(api_key, api_secret)
   auth.set_access_token(access_token, access_token_secret)
