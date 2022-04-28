@@ -40,6 +40,9 @@ def key_tweepy_proc():
   access_token = os.environ.get("ACCESS_TOKEN")
   access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
+  if api_key == '***' :
+    print('api_key is wrong!!')
+
   print(api_key)
   print(api_secret)
   print(access_token)
