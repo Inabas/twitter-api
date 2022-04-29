@@ -3,7 +3,7 @@ name: test1
 on:
   schedule:
     # 定期実行する時間（グリニッジ標準時）
-    - cron: '0 22 * * *'
+    - cron: '0 15 * * *'
   workflow_dispatch:
 # ワークフローの実行は、順次または並行して実行される1つまたは複数のジョブで構成されます。
 jobs:
